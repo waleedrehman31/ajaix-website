@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight, CheckCircle, Play } from "lucide-react";
 import SectionBadge from "../components/SectionBadge";
 
