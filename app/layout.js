@@ -1,12 +1,12 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-const Roboto = Roboto({
+const RobotoSans = Roboto({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
 });
 
-const Roboto_Mono = Roboto_Mono({
+const RobotoMono = Roboto_Mono({
 	variable: "--font-geist-mono",
 	subsets: ["latin"],
 });
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body
-				className={`${Roboto.variable} ${Roboto_Mono.variable} antialiased`}
+				className={`${RobotoSans.variable} ${RobotoMono.variable} antialiased`}
 			>
 				{children}
 			</body>
