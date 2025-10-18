@@ -3,12 +3,9 @@ import SectionBadge from "../components/SectionBadge";
 
 const Hero = () => {
 	return (
-		<section
-			id="home"
-			className="relative overflow-hidden bg-gradient-to-tl from-violet-200 to-blue-100 py-20 md:py-10"
-		>
-			<div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-300 opacity-60 rounded-full blur-3xl"></div>
-			<div className="absolute -bottom-24 -right-24 w-96 h-96 bg-violet-300 opacity-60 rounded-full blur-3xl"></div>
+		<section id="home" className="relative overflow-hidden py-20 md:py-10">
+			{/* <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-300 opacity-60 rounded-full blur-3xl"></div>
+			<div className="absolute -bottom-24 -right-24 w-96 h-96 bg-violet-300 opacity-60 rounded-full blur-3xl"></div> */}
 
 			<div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-12 relative z-10">
 				<div
@@ -91,18 +88,24 @@ const Hero = () => {
 							src="https://images.unsplash.com/photo-1582138825658-fb952c08b282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
 							alt="Software development team"
 						/>
-						<div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-4 max-w-[200px]">
+						<div className="absolute top-4 right-4 bg-white/30 backdrop-blur-3xl rounded-lg shadow-lg p-4 max-w-[200px]">
 							<div className="flex items-center space-x-2">
-								<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+								<span className="relative flex size-3">
+									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+									<span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
+								</span>
 								<span className="text-sm font-medium">99.9% Uptime</span>
 							</div>
 							<p className="text-xs text-gray-600 mt-1">
 								Reliable &amp; Scalable Solutions
 							</p>
 						</div>
-						<div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4 max-w-[200px]">
+						<div className="absolute bottom-4 left-4 bg-white/30 backdrop-blur-3xl rounded-lg shadow-lg p-4 max-w-[200px]">
 							<div className="flex items-center space-x-2">
-								<div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+								<span className="relative flex size-3">
+									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
+									<span className="relative inline-flex size-3 rounded-full bg-blue-500"></span>
+								</span>
 								<span className="text-sm font-medium">Agile Development</span>
 							</div>
 							<p className="text-xs text-gray-600 mt-1">

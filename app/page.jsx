@@ -6,16 +6,16 @@ import Navbar from "./sections/Navbar";
 import Services from "./sections/Services";
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <ContactUs />
-        <Footer />
-      </main>
-    </>
-  );
+	return (
+		<div className=" bg-gradient-to-tl from-violet-100 to-blue-100  ">
+			<Navbar />
+			<main>
+				<Hero />
+				<Services />
+				<About />
+				<ContactUs />
+				<Footer />
+			</main>
+		</div>
+	);
 }
