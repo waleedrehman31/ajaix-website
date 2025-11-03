@@ -85,16 +85,16 @@ const About = () => {
 						<div className="relative">
 							<div className="overflow-hidden rounded-2xl shadow-xl">
 								<img
-									src="https://images.unsplash.com/photo-1586202690666-e1f32e218afe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB3b3Jrc3BhY2UlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTQzOTE2Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+									src="/about-us.png"
 									alt="Modern office workspace"
-									className="w-full h-[500px] object-cover"
+									className="w-full h-[520px] object-cover"
 								/>
 							</div>
 							<div className="absolute -bottom-6 -right-6 bg-white/30 backdrop-blur-3xl rounded-xl shadow-lg p-6 max-w-[210px]">
-								<h4 className="text-2xl font-bold text-blue-100 mb-1">
+								<h4 className="text-2xl font-bold text-gray-900 mb-1">
 									8+ Years
 								</h4>
-								<p className="text-sm text-blue-200">
+								<p className="text-sm text-gray-600">
 									of Excellence in Software Development
 								</p>
 							</div>

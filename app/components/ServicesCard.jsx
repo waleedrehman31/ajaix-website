@@ -9,7 +9,7 @@ const ServicesCard = ({ service }) => {
 					<img
 						src={service.image}
 						alt=""
-						className="w-full h-48 object-cover rounded-lg"
+						className="w-full h-80 object-cover rounded-lg"
 					/>
 					<div className="absolute top-4 left-4 bg-white/30 backdrop-blur-3xl rounded-lg p-3 shadow-md">
 						{service.icon}

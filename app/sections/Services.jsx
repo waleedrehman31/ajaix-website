@@ -24,8 +24,7 @@ const services = [
 		],
 		link: "/services/web-development",
 		icon: <Code className="w-6 h-6 text-blue-600" />,
-		image:
-			"https://images.unsplash.com/photo-1546900703-cf06143d1239?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMGNvZGluZ3xlbnwxfHx8fDE3NTU0NDIwODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+		image: "/web-development.png",
 	},
 	{
 		title: "Mobile App Development",
@@ -38,8 +37,7 @@ const services = [
 			"Push Notifications",
 		],
 		link: "/services/mobile-app-development",
-		image:
-			"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MXx8fHwxNzU1NDQ2NDI5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+		image: "/mobile-development.png",
 		icon: <Smartphone className="w-6 h-6 text-blue-600" />,
 	},
 	{
@@ -53,8 +51,7 @@ const services = [
 			"Best Practices",
 		],
 		link: "/services/software-consulting",
-		image:
-			"https://images.unsplash.com/photo-1586202690666-e1f32e218afe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB3b3Jrc3BhY2UlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTQzOTE2Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+		image: "/conculting.png",
 		icon: <Settings className="w-6 h-6 text-blue-600" />,
 	},
 	{
@@ -63,8 +60,7 @@ const services = [
 			"User-centered design that creates intuitive and engaging digital experiences for your customers.",
 		points: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
 		link: "/services/ui-ux-design",
-		image:
-			"https://images.unsplash.com/photo-1586202690666-e1f32e218afe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB3b3Jrc3BhY2UlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTQzOTE2Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+		image: "/ui-ux.png",
 		icon: <Palette className="w-6 h-6 text-blue-600" />,
 	},
 	{
@@ -73,8 +69,7 @@ const services = [
 			"Scalable cloud infrastructure and DevOps practices to ensure your applications run smoothly and efficiently.",
 		points: ["AWS/Azure/GCP", "CI/CD Pipelines", "Monitoring", "Auto-scaling"],
 		link: "/services/cloud-devops",
-		image:
-			"https://images.unsplash.com/photo-1586202690666-e1f32e218afe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB3b3Jrc3BhY2UlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTQzOTE2Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+		image: "/cloud-and-devops.png",
 		icon: <Cloud className="w-6 h-6 text-blue-600" />,
 	},
 	{
@@ -88,8 +83,7 @@ const services = [
 			"ML Integration",
 		],
 		link: "/services/data-analytics",
-		image:
-			"https://images.unsplash.com/photo-1586202690666-e1f32e218afe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB3b3Jrc3BhY2UlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTQzOTE2Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+		image: "/data-analytics.png",
 		icon: <ChartColumn className="w-6 h-6 text-blue-600" />,
 	},
 ];

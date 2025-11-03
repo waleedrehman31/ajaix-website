@@ -84,8 +84,8 @@ const Hero = () => {
 				>
 					<div className="relative rounded-2xl overflow-hidden shadow-2xl">
 						<img
-							className="w-full object-cover"
-							src="https://images.unsplash.com/photo-1582138825658-fb952c08b282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+							className="w-full object-cover h-[700px]"
+							src="/hero.png"
 							alt="Software development team"
 						/>
 						<div className="absolute top-4 right-4 bg-white/30 backdrop-blur-3xl rounded-lg shadow-lg p-4 max-w-[200px]">
