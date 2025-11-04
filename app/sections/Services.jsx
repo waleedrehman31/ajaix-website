@@ -60,7 +60,7 @@ const services = [
 			"User-centered design that creates intuitive and engaging digital experiences for your customers.",
 		points: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
 		link: "/services/ui-ux-design",
-		image: "/ui-ux.png",
+		image: "/ux-ui.png",
 		icon: <Palette className="w-6 h-6 text-blue-600" />,
 	},
 	{

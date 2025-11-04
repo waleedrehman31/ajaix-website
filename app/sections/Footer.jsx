@@ -5,115 +5,96 @@ import {
 	Mail,
 	MapPin,
 	Phone,
-	Github,
 } from "lucide-react";
 import React from "react";
 
 const contacts = [
 	{
 		title: "contact@ajaix.com",
-		icon: <Mail className="w-4 h-4 mr-2" />,
+		icon: <Mail className="w-4 h-4 text-blue-600 mr-2" />,
 	},
 	{
 		title: "+92 336 0441222",
-		icon: <Phone className="w-4 h-4 mr-2" />,
+		icon: <Phone className="w-4 h-4 text-blue-600 mr-2" />,
 	},
 	{
 		title: "Office No 1, 3rd Floor, Rehman Plaza, Mansehra, Pakistan",
-		icon: <MapPin className="w-4 h-4 mr-2" />,
+		icon: <MapPin className="w-4 h-4 text-blue-600 mr-2" />,
 	},
 ];
 
 const services = [
-	{
-		title: "Web Development",
-		link: "/services/web-development",
-	},
-	{
-		title: "Mobile App Development",
-		link: "/services/mobile-app-development",
-	},
-	{
-		title: "Software Consulting",
-		link: "/services/software-consulting",
-	},
-	{
-		title: "UI/UX Design",
-		link: "/services/ui-ux-design",
-	},
-	{
-		title: "Cloud & DevOps",
-		link: "/services/cloud-devops",
-	},
-	{
-		title: "Data Analytics",
-		link: "/services/data-analytics",
-	},
+	{ title: "Web Development", link: "/services/web-development" },
+	{ title: "Mobile App Development", link: "/services/mobile-app-development" },
+	{ title: "Software Consulting", link: "/services/software-consulting" },
+	{ title: "UI/UX Design", link: "/services/ui-ux-design" },
+	{ title: "Cloud & DevOps", link: "/services/cloud-devops" },
+	{ title: "Data Analytics", link: "/services/data-analytics" },
 ];
 
 const links = [
-	{
-		title: "About Us",
-		link: "#about-us",
-	},
-	{
-		title: "Services",
-		link: "#services",
-	},
-	{
-		title: "Contact Us",
-		link: "#contact-us",
-	},
+	{ title: "About Us", link: "#about-us" },
+	{ title: "Services", link: "#services" },
+	{ title: "Contact Us", link: "#contact-us" },
 ];
 
 const socialMedia = [
 	{
 		icon: <Facebook className="w-5 h-5" />,
-		link: "https://facebook.com",
+		link: "https://www.facebook.com/profile.php?id=61582740734398",
 	},
 	{
 		icon: <Linkedin className="w-5 h-5" />,
-		link: "https://linkedIn.com",
+		link: "https://www.linkedin.com/company/ajaix-technologies/",
 	},
 	{
 		icon: <Instagram className="w-5 h-5" />,
-		link: "https://instagram.com",
-	},
-	{
-		icon: <Github className="w-5 h-5" />,
-		link: "https://github.com",
+		link: "https://www.instagram.com/ajaix_technologies/",
 	},
 ];
 
 const Footer = () => {
 	return (
-		<footer className="bg-white/30 backdrop-blur-3xl">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-				<div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+		<footer className="bg-white/30 backdrop-blur-3xl border-t border-white/20">
+			<div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+					{/* Company Info */}
 					<div className="col-span-1 md:col-span-2">
-						<h3 className="text-2xl font-bold mb-4">AJAIX</h3>
-						<p className="text-gray-600 mb-6 max-w-md">
-							Leading software development agency specializing in web
-							applications, mobile apps, and custom software solutions. We
-							transform your ideas into powerful digital experiences.
+						<div className="flex items-center mb-4">
+							<img src="/3.png" alt="Ajaix Logo" className="w-50 mr-3" />
+							{/* <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">
+								AJAIX
+							</h3> */}
+						</div>
+						<p className="text-gray-700 leading-relaxed mb-6 max-w-md">
+							We craft intelligent digital experiences — from web and mobile
+							apps to scalable enterprise solutions. Let's build the future
+							together.
 						</p>
-						<div className="space-y-2">
+						<div className="space-y-3">
 							{contacts.map((contact, index) => (
-								<div className="flex items-center text-gray-600" key={index}>
+								<div
+									key={index}
+									className="flex items-start text-gray-700 hover:text-blue-600 transition-colors"
+								>
 									{contact.icon}
-									<span>{contact.title}</span>
+									<span className="text-sm">{contact.title}</span>
 								</div>
 							))}
 						</div>
 					</div>
+
+					{/* Services */}
 					<div>
-						<h4 className="font-semibold mb-4">Services</h4>
+						<h4 className="text-lg font-semibold text-gray-900 mb-4 border-b border-blue-100 pb-2">
+							Services
+						</h4>
 						<ul className="space-y-2">
 							{services.map((service, index) => (
 								<li key={index}>
 									<a
 										href={service.link}
-										className="text-gray-600 hover:text-blue-500 transition-colors"
+										className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm"
 									>
 										{service.title}
 									</a>
@@ -121,32 +102,42 @@ const Footer = () => {
 							))}
 						</ul>
 					</div>
+
+					{/* Company */}
 					<div>
-						<h4 className="font-semibold mb-4">Company</h4>
+						<h4 className="text-lg font-semibold text-gray-900 mb-4 border-b border-blue-100 pb-2">
+							Company
+						</h4>
 						<ul className="space-y-2">
-							{links.map((contact, index) => (
+							{links.map((link, index) => (
 								<li key={index}>
 									<a
-										href={contact.link}
-										className="text-gray-600 hover:text-blue-500 transition-colors"
+										href={link.link}
+										className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm"
 									>
-										{contact.title}
+										{link.title}
 									</a>
 								</li>
 							))}
 						</ul>
 					</div>
 				</div>
-				<div className="border-t border-gray-900  mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-					<div className="text-gray-600 text-sm">
-						© 2025 Ajaix. All rights reserved.
-					</div>
-					<div className="flex space-x-6 mt-4 md:mt-0">
+
+				{/* Bottom Bar */}
+				<div className="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+					<p className="text-gray-600 text-sm text-center md:text-left">
+						© {new Date().getFullYear()}{" "}
+						<span className="font-semibold text-gray-900">AJAIX</span>. All
+						rights reserved.
+					</p>
+					<div className="flex space-x-5 mt-4 md:mt-0">
 						{socialMedia.map((media, index) => (
 							<a
-								href={media.link}
-								className="text-gray-600 hover:text-blue-600 transition-colors"
 								key={index}
+								href={media.link}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-gray-600 hover:text-blue-600 transition-colors duration-200 p-2 rounded-full hover:bg-blue-50"
 							>
 								{media.icon}
 							</a>

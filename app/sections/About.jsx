@@ -81,41 +81,63 @@ const About = () => {
 							innovative technology solutions.
 						</p>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-						<div className="relative">
-							<div className="overflow-hidden rounded-2xl shadow-xl">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20 relative">
+						{/* Decorative glowing gradient background */}
+						<div className="absolute -inset-10 bg-gradient-to-tr from-blue-500/10 via-purple-500/10 to-transparent rounded-[4rem] blur-3xl -z-10"></div>
+
+						{/* Image Section */}
+						<div className="relative group">
+							{/* Outer “liquid glow” border */}
+							<div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-blue-500/40 via-transparent to-purple-500/40 blur-2xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
+
+							{/* Image */}
+							<div className="overflow-hidden rounded-2xl relative border border-white/20 backdrop-blur-xl shadow-2xl">
 								<img
 									src="/about-us.png"
 									alt="Modern office workspace"
-									className="w-full h-[520px] object-cover"
+									className="w-full h-[520px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
 								/>
+								{/* Light reflection overlay */}
+								<div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/5 to-white/10 opacity-40"></div>
 							</div>
-							<div className="absolute -bottom-6 -right-6 bg-white/30 backdrop-blur-3xl rounded-xl shadow-lg p-6 max-w-[210px]">
-								<h4 className="text-2xl font-bold text-gray-900 mb-1">
+
+							{/* Floating Info Card */}
+							<div className="absolute -bottom-8 -right-8 bg-white/30 backdrop-blur-2xl rounded-2xl shadow-xl p-6 max-w-[230px] border border-white/30  overflow-hidden">
+								{/* Subtle glow behind card */}
+								<div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-400/30 via-transparent to-purple-400/40 blur-xl -z-10"></div>
+								{/* Glass shine */}
+								<div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-30"></div>
+
+								<h4 className="text-3xl font-bold text-gray-900 mb-1 drop-shadow-sm">
 									8+ Years
 								</h4>
-								<p className="text-sm text-gray-600">
+								<p className="text-sm text-gray-700 font-medium">
 									of Excellence in Software Development
 								</p>
 							</div>
 						</div>
+
+						{/* Text Content */}
 						<div className="space-y-6">
 							<div>
-								<h3 className="text-2xl font-bold text-gray-900 mb-4">
+								<h3 className="text-3xl font-bold text-gray-900 mb-4 leading-snug">
 									Crafting Digital Solutions That Drive Success
 								</h3>
 								<p className="text-gray-600 leading-relaxed mb-6">
-									Founded in 2016, PersiSoft has grown from a small startup to a
-									leading software development agency. We specialize in creating
-									scalable, maintainable, and user-friendly applications that
-									solve real business problems.
+									Founded in 2016,{" "}
+									<span className="font-semibold text-blue-600">Ajaix</span> has
+									evolved from a small startup into a global tech company. We
+									specialize in creating scalable, intuitive, and
+									high-performance applications that empower businesses to
+									thrive in the digital age.
 								</p>
-								<p className="text-gray-600 leading-relaxed ">
-									Our team combines technical expertise with creative
-									problem-solving to deliver solutions that not only meet
-									current needs but also scale with your business growth.
+								<p className="text-gray-600 leading-relaxed">
+									Our team combines deep technical expertise with design
+									innovation to build products that not only look great but also
+									deliver measurable results.
 								</p>
 							</div>
+
 							<div className="space-y-4">
 								<h4 className="font-semibold text-gray-900">
 									Our Expertise Includes:

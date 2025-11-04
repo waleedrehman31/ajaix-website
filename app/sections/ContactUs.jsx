@@ -192,25 +192,25 @@ const ContactUs = () => {
 						<div className="space-y-6">
 							{contacts.map((contact, index) => (
 								<div
-									className="bg-white/30 backdrop-blur-3xl flex flex-col gap-6 rounded-xl border-0 shadow-md hover:shadow-lg transition-shadow"
 									key={index}
+									className="group relative bg-white/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/50 shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-blue-100"
 								>
-									<div className="p-6">
-										<div className="flex  space-x-4">
-											<div className="flex-shrink-0">
-												<div className="flex w-12 h-12 bg-blue-100 rounded-lg items-center justify-center">
-													{contact.icon}
-												</div>
+									<div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-100/40 to-purple-100/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+
+									<div className="relative flex space-x-4 items-start">
+										<div className="flex-shrink-0">
+											<div className="flex w-12 h-12 bg-blue-50 rounded-lg items-center justify-center shadow-inner">
+												{contact.icon}
 											</div>
-											<div>
-												<h3 className="font-semibold text-gray-900 mb-1">
-													{contact.title}
-												</h3>
-												<p className="text-gray-900 mb-1">{contact.value}</p>
-												<p className="text-gray-500 text-sm">
-													{contact.description}
-												</p>
-											</div>
+										</div>
+										<div>
+											<h3 className="font-semibold text-gray-900 mb-1">
+												{contact.title}
+											</h3>
+											<p className="text-gray-900 mb-1">{contact.value}</p>
+											<p className="text-gray-500 text-sm">
+												{contact.description}
+											</p>
 										</div>
 									</div>
 								</div>
@@ -219,8 +219,41 @@ const ContactUs = () => {
 					</div>
 				</div>
 			</div>
+
+			<style>{`
+				.input-style {
+					@apply border-none flex h-10 w-full rounded-md px-3 py-2 text-base bg-white focus-visible:ring-2 focus-visible:ring-blue-300 outline-none transition-all duration-200 shadow-sm hover:shadow focus:shadow-md;
+				}
+				@keyframes fadeInUp {
+					from {
+						opacity: 0;
+						transform: translateY(10px);
+					}
+					to {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+				.animate-fadeInUp {
+					animation: fadeInUp 0.6s ease forwards;
+				}
+			`}</style>
 		</section>
 	);
 };
+
+const FormField = ({ label, required, placeholder, type }) => (
+	<div>
+		<label className="block text-sm font-medium text-gray-700 mb-2">
+			{label} {required && <span className="text-red-500">*</span>}
+		</label>
+		<input
+			type={type}
+			placeholder={placeholder}
+			required={required}
+			className="input-style"
+		/>
+	</div>
+);
 
 export default ContactUs;

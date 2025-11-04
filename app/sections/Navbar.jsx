@@ -9,20 +9,28 @@ const Navbar = () => {
 	const toggleMenu = () => setMenuOpen(!menuOpen);
 
 	return (
-		<nav className=" sticky top-0 z-50">
-			<div className="max-w-7xl mx-auto px-6 md:px-12 py-4 ">
-				<div className="py-2 px-10 bg-white/30 backdrop-blur-3xl shadow-md rounded-full flex justify-between items-center">
+		<nav className="sticky top-0 z-50">
+			<div className="max-w-7xl mx-auto px-6 md:px-12 py-4">
+				<div className="py-2 px-10 bg-white/20 backdrop-blur-2xl border border-white/40 shadow-lg rounded-full flex justify-between items-center transition-all duration-300 hover:shadow-2xl">
+					{/* Logo */}
 					<a href="/">
-						<img src="/3.png" alt="header logo" className="w-30" />
+						<img src="/3.png" alt="AJAIX Logo" className="w-28" />
 					</a>
 
 					{/* Desktop Menu */}
 					<div className="hidden md:flex items-center space-x-8 font-medium text-gray-800">
-						<a href="#" className="hover:text-blue-700 transition-colors">
-							Home
+						<a href="#" className="relative group">
+							<span className="transition-colors group-hover:text-blue-700">
+								Home
+							</span>
+							<span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-700 transition-all group-hover:w-full"></span>
 						</a>
-						<a href="#" className="hover:text-blue-700 transition-colors">
-							About Us
+
+						<a href="#" className="relative group">
+							<span className="transition-colors group-hover:text-blue-700">
+								About Us
+							</span>
+							<span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-700 transition-all group-hover:w-full"></span>
 						</a>
 
 						{/* Services Dropdown */}
@@ -42,44 +50,41 @@ const Navbar = () => {
 
 							{/* Dropdown */}
 							<div
-								className={`absolute left-0 mt-2 w-56 bg-white/30 backdrop-blur-3xl rounded-lg shadow-lg border border-gray-100 origin-top transform transition-all duration-300 ease-out ${
+								className={`absolute left-0 mt-3 w-56 bg-white/60 backdrop-blur-2xl rounded-xl shadow-xl border border-white/40 overflow-hidden transition-all duration-300 ${
 									servicesOpen
-										? "opacity-100 scale-100 visible"
-										: "opacity-0 scale-95 invisible"
+										? "opacity-100 translate-y-0 visible"
+										: "opacity-0 -translate-y-2 invisible"
 								}`}
 							>
-								<a
-									href="#"
-									className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
-								>
-									Web Development
-								</a>
-								<a
-									href="#"
-									className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
-								>
-									App Development
-								</a>
-								<a
-									href="#"
-									className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
-								>
-									Graphic Designing
-								</a>
-								<a
-									href="#"
-									className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
-								>
-									Video Editing
-								</a>
+								{[
+									"Web Development",
+									"App Development",
+									"Graphic Designing",
+									"Video Editing",
+								].map((item) => (
+									<a
+										key={item}
+										href="#"
+										className="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white transition-all duration-200"
+									>
+										{item}
+									</a>
+								))}
 							</div>
 						</div>
 
-						<a href="#" className="hover:text-blue-700 transition-colors">
-							Portfolio
+						<a href="#" className="relative group">
+							<span className="transition-colors group-hover:text-blue-700">
+								Portfolio
+							</span>
+							<span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-700 transition-all group-hover:w-full"></span>
 						</a>
-						<a href="#" className="hover:text-blue-700 transition-colors">
-							Testimonials
+
+						<a href="#" className="relative group">
+							<span className="transition-colors group-hover:text-blue-700">
+								Testimonials
+							</span>
+							<span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-700 transition-all group-hover:w-full"></span>
 						</a>
 					</div>
 
@@ -87,7 +92,7 @@ const Navbar = () => {
 					<div className="hidden md:block">
 						<a
 							href="#"
-							className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow-sm transition"
+							className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
 						>
 							Free Consultation
 						</a>
@@ -103,19 +108,22 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			{/* Mobile Dropdown Menu */}
+			{/* Mobile Dropdown */}
 			<div
-				className={`md:hidden bg-white border-t border-gray-200 shadow-md transition-all duration-300 overflow-hidden ${
+				className={`md:hidden bg-white/90 backdrop-blur-2xl border-t border-gray-200 shadow-lg transition-all duration-500 overflow-hidden ${
 					menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
 				}`}
 			>
-				<div className="px-6 pb-4 pt-2 space-y-2 animate-fadeIn">
-					<a href="#" className="block py-2 text-gray-800 hover:text-blue-700">
-						Home
-					</a>
-					<a href="#" className="block py-2 text-gray-800 hover:text-blue-700">
-						About Us
-					</a>
+				<div className="px-6 pb-4 pt-2 space-y-3">
+					{["Home", "About Us"].map((item) => (
+						<a
+							key={item}
+							href="#"
+							className="block py-2 text-gray-800 hover:text-blue-700 transition"
+						>
+							{item}
+						</a>
+					))}
 
 					{/* Collapsible Services */}
 					<div>
@@ -130,49 +138,41 @@ const Navbar = () => {
 								}`}
 							/>
 						</button>
-
 						<div
 							className={`pl-4 space-y-1 transition-all duration-300 ${
 								servicesOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
 							}`}
 						>
-							<a
-								href="#"
-								className="block py-1 text-sm text-gray-700 hover:text-blue-700"
-							>
-								Web Development
-							</a>
-							<a
-								href="#"
-								className="block py-1 text-sm text-gray-700 hover:text-blue-700"
-							>
-								App Development
-							</a>
-							<a
-								href="#"
-								className="block py-1 text-sm text-gray-700 hover:text-blue-700"
-							>
-								Graphic Designing
-							</a>
-							<a
-								href="#"
-								className="block py-1 text-sm text-gray-700 hover:text-blue-700"
-							>
-								Video Editing
-							</a>
+							{[
+								"Web Development",
+								"App Development",
+								"Graphic Designing",
+								"Video Editing",
+							].map((service) => (
+								<a
+									key={service}
+									href="#"
+									className="block py-1 text-sm text-gray-700 hover:text-blue-700"
+								>
+									{service}
+								</a>
+							))}
 						</div>
 					</div>
 
-					<a href="#" className="block py-2 text-gray-800 hover:text-blue-700">
-						Portfolio
-					</a>
-					<a href="#" className="block py-2 text-gray-800 hover:text-blue-700">
-						Testimonials
-					</a>
+					{["Portfolio", "Testimonials"].map((item) => (
+						<a
+							key={item}
+							href="#"
+							className="block py-2 text-gray-800 hover:text-blue-700"
+						>
+							{item}
+						</a>
+					))}
 
 					<a
 						href="#"
-						className="block mt-3 text-center bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition"
+						className="block mt-4 text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all"
 					>
 						Free Consultation
 					</a>

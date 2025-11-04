@@ -16,7 +16,9 @@ const Hero = () => {
 
 					<h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
 						Transform Your Ideas Into <br />
-						<span className="text-blue-600">Digital Reality</span>
+						<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+							Digital Reality
+						</span>
 					</h1>
 
 					<p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-xl">
@@ -88,7 +90,8 @@ const Hero = () => {
 							src="/hero.png"
 							alt="Software development team"
 						/>
-						<div className="absolute top-4 right-4 bg-white/30 backdrop-blur-3xl rounded-lg shadow-lg p-4 max-w-[200px]">
+						<div className="absolute top-4 right-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30 shadow-lg p-4 max-w-[200px]">
+							<div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-blue-400/20 to-purple-400/30 blur-xl -z-10"></div>
 							<div className="flex items-center space-x-2">
 								<span className="relative flex size-3">
 									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
@@ -100,7 +103,8 @@ const Hero = () => {
 								Reliable &amp; Scalable Solutions
 							</p>
 						</div>
-						<div className="absolute bottom-4 left-4 bg-white/30 backdrop-blur-3xl rounded-lg shadow-lg p-4 max-w-[200px]">
+						<div className="absolute bottom-4 left-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30 shadow-lg p-4 max-w-[200px]">
+							<div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-blue-400/20 to-purple-400/30 blur-xl -z-10"></div>
 							<div className="flex items-center space-x-2">
 								<span className="relative flex size-3">
 									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
