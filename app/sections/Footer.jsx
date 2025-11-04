@@ -36,6 +36,8 @@ const links = [
 	{ title: "About Us", link: "#about-us" },
 	{ title: "Services", link: "#services" },
 	{ title: "Contact Us", link: "#contact-us" },
+	{ title: "Terms and Conditions", link: "/terms" },
+	{ title: "Privacy Policy", link: "/privacy" },
 ];
 
 const socialMedia = [
@@ -55,7 +57,7 @@ const socialMedia = [
 
 const Footer = () => {
 	return (
-		<footer className="bg-white/30 backdrop-blur-3xl border-t border-white/20">
+		<footer className="bg-white/30 backdrop-blur-1xl border-t border-white/20">
 			<div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
 				<div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 					{/* Company Info */}

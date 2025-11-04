@@ -1,5 +1,8 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./sections/Navbar";
+import Footer from "./sections/Footer";
+import CookieConsent from "./components/CookieConsent";
 
 const RobotoSans = Roboto({
 	variable: "--font-geist-sans",
@@ -22,7 +25,12 @@ export default function RootLayout({ children }) {
 			<body
 				className={`${RobotoSans.variable} ${RobotoMono.variable} antialiased`}
 			>
-				{children}
+				<div className=" bg-gradient-to-tl from-violet-100 to-blue-100  ">
+					<Navbar />
+					{children}
+					<Footer />
+				</div>
+				<CookieConsent />
 			</body>
 		</html>
 	);

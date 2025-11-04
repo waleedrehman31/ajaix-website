@@ -7,15 +7,11 @@ import Services from "./sections/Services";
 
 export default function Home() {
 	return (
-		<div className=" bg-gradient-to-tl from-violet-100 to-blue-100  ">
-			<Navbar />
-			<main>
-				<Hero />
-				<Services />
-				<About />
-				<ContactUs />
-				<Footer />
-			</main>
-		</div>
+		<main>
+			<Hero />
+			<Services />
+			<About />
+			<ContactUs />
+		</main>
 	);
 }
