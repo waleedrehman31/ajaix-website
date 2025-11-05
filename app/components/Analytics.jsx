@@ -1,21 +1,22 @@
 "use client";
 
-import { useEffect } from "react";
 import Script from "next/script";
+import { useEffect } from "react";
 
 export default function Analytics() {
 	const gaId = process.env.NEXT_PUBLIC_GA_ID;
-
+	console.log(process.env.NEXT_PUBLIC_GA_ID);
 	useEffect(() => {
 		const consent = localStorage.getItem("cookieConsent");
 		if (consent === "accepted" && gaId) {
-			loadGA();
+			initGA(gaId);
 		}
 	}, [gaId]);
 
-	const loadGA = () => {
-		if (!gaId || window.gtag) return;
+	const initGA = (gaId) => {
+		if (window.gtag) return; // Prevent duplicate init
 
+		// Load the Google script dynamically
 		const script = document.createElement("script");
 		script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
 		script.async = true;
@@ -26,22 +27,27 @@ export default function Analytics() {
 		function gtag(...args) {
 			window.dataLayer.push(args);
 		}
+		window.gtag = gtag;
+
 		gtag("js", new Date());
 		gtag("config", gaId);
-		window.gtag = gtag;
+		console.log("✅ Google Analytics initialized:", gaId);
 	};
 
-	// Re-run when cookie accepted (without reload)
+	// Attach enableGA globally so CookieConsent can trigger it
 	useEffect(() => {
-		window.enableGA = loadGA;
+		window.enableGA = () => {
+			const gaId = process.env.NEXT_PUBLIC_GA_ID;
+			if (gaId) initGA(gaId);
+		};
 	}, []);
 
 	return (
 		<Script id="ga-setup" strategy="afterInteractive">
 			{`
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-			`}
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+      `}
 		</Script>
 	);
 }

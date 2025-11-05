@@ -66,6 +66,28 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<head>
 				<meta name="apple-mobile-web-app-title" content="AJAIX" />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "Organization",
+							name: siteConfig.name,
+							url: siteConfig.url,
+							logo: `${siteConfig.url}/logo.png`,
+							sameAs: Object.values(siteConfig.social),
+						}),
+					}}
+				></script>
+				<script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=G-69CZ40ZXB9"
+				></script>
+				<script>
+					window.dataLayer = window.dataLayer || []; function gtag()
+					{dataLayer.push(arguments)}
+					gtag('js', new Date()); gtag('config', 'G-69CZ40ZXB9');
+				</script>
 			</head>
 			<body
 				className={`${RobotoSans.variable} ${RobotoMono.variable} antialiased`}
@@ -78,19 +100,6 @@ export default function RootLayout({ children }) {
 				<CookieConsent />
 				<Analytics />
 			</body>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "Organization",
-						name: siteConfig.name,
-						url: siteConfig.url,
-						logo: `${siteConfig.url}/logo.png`,
-						sameAs: Object.values(siteConfig.social),
-					}),
-				}}
-			></script>
 		</html>
 	);
 }
