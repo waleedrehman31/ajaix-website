@@ -4,7 +4,6 @@ import Navbar from "./sections/Navbar";
 import Footer from "./sections/Footer";
 import CookieConsent from "./components/CookieConsent";
 import { siteConfig } from "./metadata";
-import Analytics from "./components/Analytics";
 
 const RobotoSans = Roboto({
 	variable: "--font-geist-sans",
@@ -97,7 +96,6 @@ export default function RootLayout({ children }) {
 					{children}
 					<Footer />
 				</div>
-				<Analytics />
 				<CookieConsent />
 			</body>
 		</html>

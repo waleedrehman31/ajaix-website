@@ -15,7 +15,6 @@ export default function CookieConsent() {
 
 	const acceptCookies = () => {
 		localStorage.setItem("cookieConsent", "accepted");
-		window.enableGA?.();
 		setVisible(false);
 	};
 
