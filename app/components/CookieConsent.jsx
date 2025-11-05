@@ -9,7 +9,7 @@ export default function CookieConsent() {
 	useEffect(() => {
 		const consent = localStorage.getItem("cookieConsent");
 		if (!consent) {
-			setTimeout(() => setVisible(true), 1000);
+			setTimeout(() => setVisible(true), 800);
 		}
 	}, []);
 
@@ -30,14 +30,15 @@ export default function CookieConsent() {
 		<div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-lg w-[90%] md:w-auto bg-white/70 backdrop-blur-2xl border border-white/50 rounded-2xl shadow-2xl p-5 flex flex-col md:flex-row items-start md:items-center gap-4 transition-all animate-slide-up">
 			<div className="flex-1 text-sm text-gray-800 leading-snug">
 				We use cookies to improve your experience and analyze site usage. By
-				continuing to browse, you agree to our{" "}
+				continuing, you agree to our{" "}
 				<Link href="/privacy" className="text-blue-600 hover:underline">
 					Privacy Policy
 				</Link>{" "}
 				and{" "}
 				<Link href="/terms" className="text-blue-600 hover:underline">
-					Terms.
+					Terms of Service
 				</Link>
+				.
 			</div>
 			<div className="flex gap-2 w-full md:w-auto justify-end">
 				<button
