@@ -97,8 +97,8 @@ export default function RootLayout({ children }) {
 					{children}
 					<Footer />
 				</div>
-				<CookieConsent />
 				<Analytics />
+				<CookieConsent />
 			</body>
 		</html>
 	);
