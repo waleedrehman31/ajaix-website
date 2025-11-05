@@ -4,6 +4,7 @@ import Navbar from "./sections/Navbar";
 import Footer from "./sections/Footer";
 import CookieConsent from "./components/CookieConsent";
 import { siteConfig } from "./metadata";
+import Analytics from "./components/Analytics";
 
 const RobotoSans = Roboto({
 	variable: "--font-geist-sans",
@@ -78,15 +79,6 @@ export default function RootLayout({ children }) {
 						}),
 					}}
 				></script>
-				<script
-					async
-					src="https://www.googletagmanager.com/gtag/js?id=G-69CZ40ZXB9"
-				></script>
-				<script>
-					window.dataLayer = window.dataLayer || []; function gtag()
-					{dataLayer.push(arguments)}
-					gtag('js', new Date()); gtag('config', 'G-69CZ40ZXB9');
-				</script>
 			</head>
 			<body
 				className={`${RobotoSans.variable} ${RobotoMono.variable} antialiased`}
@@ -96,6 +88,7 @@ export default function RootLayout({ children }) {
 					{children}
 					<Footer />
 				</div>
+				<Analytics />
 				<CookieConsent />
 			</body>
 		</html>

@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 export default function Analytics() {
 	const gaId = process.env.NEXT_PUBLIC_GA_ID;
-	console.log(process.env.NEXT_PUBLIC_GA_ID);
 	useEffect(() => {
 		const consent = localStorage.getItem("cookieConsent");
 		if (consent === "accepted" && gaId) {
@@ -31,7 +30,6 @@ export default function Analytics() {
 
 		gtag("js", new Date());
 		gtag("config", gaId);
-		console.log("✅ Google Analytics initialized:", gaId);
 	};
 
 	// Attach enableGA globally so CookieConsent can trigger it
