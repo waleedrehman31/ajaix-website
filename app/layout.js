@@ -66,6 +66,10 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<head>
 				<meta name="apple-mobile-web-app-title" content="AJAIX" />
+				<meta
+					name="facebook-domain-verification"
+					content="sx0xzls6ibmjqg5n5vf7oyfy3elqlm"
+				/>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
