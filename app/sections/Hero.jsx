@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, Play } from "lucide-react";
 import SectionBadge from "../components/SectionBadge";
+import InvertedImage from "../components/InvertedImage";
 
 const Hero = () => {
 	return (
@@ -60,7 +61,7 @@ const Hero = () => {
 						</a>
 					</div>
 
-					<div
+					{/* <div
 						className="pt-8 animate-fadeInUp"
 						style={{ animationDelay: "0.6s" }}
 					>
@@ -77,20 +78,13 @@ const Hero = () => {
 								</div>
 							))}
 						</div>
-					</div>
+					</div> */}
 				</div>
 
-				<div
-					className="relative animate-fadeInUp"
-					style={{ animationDelay: "0.3s" }}
-				>
-					<div className="relative rounded-2xl overflow-hidden shadow-2xl">
-						<img
-							className="w-full object-cover h-[700px]"
-							src="/hero.png"
-							alt="Software development team"
-						/>
-						<div className="absolute top-4 right-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30 shadow-lg p-4 max-w-[200px]">
+				<div className="relative ">
+					<div className="relative rounded-2xl overflow-hidden ">
+						<InvertedImage src="/hero.png" alt="Software development team" />
+						<div className="absolute top-4 right-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30  p-4 max-w-[200px]">
 							<div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-blue-400/20 to-purple-400/30 blur-xl -z-10"></div>
 							<div className="flex items-center space-x-2">
 								<span className="relative flex size-3">
@@ -103,7 +97,7 @@ const Hero = () => {
 								Reliable &amp; Scalable Solutions
 							</p>
 						</div>
-						<div className="absolute bottom-4 left-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30 shadow-lg p-4 max-w-[200px]">
+						<div className="absolute bottom-4 left-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30  p-4 max-w-[200px]">
 							<div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-blue-400/20 to-purple-400/30 blur-xl -z-10"></div>
 							<div className="flex items-center space-x-2">
 								<span className="relative flex size-3">

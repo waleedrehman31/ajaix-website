@@ -3,6 +3,7 @@ import SectionBadge from "../components/SectionBadge";
 import Badge from "../components/Badge";
 import { Award, Target, Users, Zap } from "lucide-react";
 import StatsCard from "../components/StatsCard";
+import InvertedAboutImage from "../components/InvertedAboutImage";
 
 const experties = [
 	"React & Next.js",
@@ -82,30 +83,21 @@ const About = () => {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20 relative">
-						{/* Decorative glowing gradient background */}
 						<div className="absolute -inset-10 bg-gradient-to-tr from-blue-500/10 via-purple-500/10 to-transparent rounded-[4rem] blur-3xl -z-10"></div>
 
-						{/* Image Section */}
 						<div className="relative group">
-							{/* Outer “liquid glow” border */}
 							<div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-blue-500/40 via-transparent to-purple-500/40 blur-2xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
 
-							{/* Image */}
-							<div className="overflow-hidden rounded-2xl relative border border-white/20 backdrop-blur-xl shadow-2xl">
-								<img
+							<div className="overflow-hidden rounded-2xl relative border border-white/20 backdrop-blur-xl ">
+								<InvertedAboutImage
 									src="/about-us.png"
 									alt="Modern office workspace"
-									className="w-full h-[520px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
 								/>
-								{/* Light reflection overlay */}
 								<div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/5 to-white/10 opacity-40"></div>
 							</div>
 
-							{/* Floating Info Card */}
 							<div className="absolute -bottom-8 -right-8 bg-white/30 backdrop-blur-2xl rounded-2xl shadow-xl p-6 max-w-[230px] border border-white/30  overflow-hidden">
-								{/* Subtle glow behind card */}
 								<div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-400/30 via-transparent to-purple-400/40 blur-xl -z-10"></div>
-								{/* Glass shine */}
 								<div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-30"></div>
 
 								<h4 className="text-3xl font-bold text-gray-900 mb-1 drop-shadow-sm">
