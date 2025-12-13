@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import SectionBadge from "../components/SectionBadge";
+import SectionBadge from "../SectionBadge";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 

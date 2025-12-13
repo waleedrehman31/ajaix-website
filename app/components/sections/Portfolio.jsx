@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import SectionBadge from "../components/SectionBadge";
+import SectionBadge from "../SectionBadge";
 
 const categories = ["All", "Web", "App", "AI", "Branding"];
 

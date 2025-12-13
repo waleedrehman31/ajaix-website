@@ -1,5 +1,5 @@
 import React from "react";
-import SectionBadge from "../components/SectionBadge";
+import SectionBadge from "../SectionBadge";
 import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 
 const contacts = [

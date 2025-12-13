@@ -1,9 +1,9 @@
 import React from "react";
-import SectionBadge from "../components/SectionBadge";
-import Badge from "../components/Badge";
+import SectionBadge from "../SectionBadge";
+import Badge from "../Badge";
 import { Award, Target, Users, Zap } from "lucide-react";
-import StatsCard from "../components/StatsCard";
-import InvertedAboutImage from "../components/InvertedAboutImage";
+import StatsCard from "../StatsCard";
+import InvertedAboutImage from "../InvertedAboutImage";
 
 const experties = [
 	"React & Next.js",

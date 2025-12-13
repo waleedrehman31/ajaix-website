@@ -1,7 +1,7 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./sections/Navbar";
-import Footer from "./sections/Footer";
+import Navbar from "./components/sections/Navbar";
+import Footer from "./components/sections/Footer";
 import CookieConsent from "./components/CookieConsent";
 import { siteConfig } from "./metadata";
 import Analytics from "./components/Analytics";

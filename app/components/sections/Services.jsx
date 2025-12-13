@@ -1,6 +1,6 @@
 import React from "react";
-import SectionBadge from "../components/SectionBadge";
-import ServicesCard from "../components/ServicesCard";
+import SectionBadge from "../SectionBadge";
+import ServicesCard from "../ServicesCard";
 import {
 	ArrowRight,
 	ChartColumn,

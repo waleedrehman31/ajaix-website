@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle, Play } from "lucide-react";
-import SectionBadge from "../components/SectionBadge";
-import InvertedImage from "../components/InvertedImage";
+import SectionBadge from "../SectionBadge";
+import InvertedImage from "../InvertedImage";
 
 const Hero = () => {
 	return (
