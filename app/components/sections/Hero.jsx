@@ -1,120 +1,59 @@
-import { ArrowRight, CheckCircle, Play } from "lucide-react";
-import SectionBadge from "../SectionBadge";
-import InvertedImage from "../InvertedImage";
+import React from "react";
+import Image from "next/image";
+import Link from 'next/link';
 
 const Hero = () => {
-	return (
-		<section id="home" className="relative overflow-hidden py-20 md:py-10">
-			{/* <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-300 opacity-60 rounded-full blur-3xl"></div>
-			<div className="absolute -bottom-24 -right-24 w-96 h-96 bg-violet-300 opacity-60 rounded-full blur-3xl"></div> */}
+  return (
+	<>
+	<div className="min-h-screen bg-[#E8E9FE] flex flex-col items-center justify-center px-4 ">
+		<div className="w-full flex items-center justify-center mt-20 md:mt-40">
+  <div
+    className="w-full md:w-[300px] md:h-[200px] bg-no-repeat bg-center bg-cover opacity-80 hidden md:block"
+    style={{ backgroundImage: "url('/Globe.svg')" }}
+  />
+</div>
 
-			<div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-12 relative z-10">
-				<div
-					className="space-y-8 animate-fadeInUp"
-					style={{ animationDelay: "0.1s" }}
-				>
-					<SectionBadge content="🚀 Leading Software Development Agency" />
 
-					<h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-						Transform Your Ideas Into <br />
-						<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-							Digital Reality
-						</span>
-					</h1>
+		<div className="absolute inset-0 flex flex-col items-center justify-center -mt-40 md:mt-0 md:-top-32	 z-20 px-4 sm:px-0">
+			<Image
+            src="/Subtract.svg"
+            alt="Underline ellipse"
+            width={500}
+            height={100}
+            className="absolute top-1/2 left-1/2 -translate-x-[200px] -translate-y-1/4 z-10 hidden md:block"
+          />
 
-					<p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-xl">
-						We specialize in creating cutting-edge web applications, mobile
-						apps, and custom software solutions that drive business growth and
-						innovation.
-					</p>
+		  <h1 className="relative z-20 text-3xl sm:text-3xl md:text-[32px] font-extrabold text-center leading-snug text-[#0F172A]">
+            Welcome To <span className="text-[#5380EA]">AJAIX</span>
+            <br />
+            Technologies
+           </h1>
+		</div>
 
-					<div className="flex flex-wrap gap-4 md:gap-6">
-						{[
-							"500+ Projects Delivered",
-							"50+ Happy Clients",
-							"24/7 Support",
-						].map((text, i) => (
-							<div
-								key={i}
-								className="flex items-center space-x-2 animate-fadeInUp"
-								style={{ animationDelay: `${0.2 + i * 0.1}s` }}
-							>
-								<CheckCircle className="w-5 h-5 text-green-500" />
-								<span className="text-gray-800 font-medium">{text}</span>
-							</div>
-						))}
-					</div>
+		<div className="flex flex-col items-center justify-center w-full max-w-[850px] mt-24 md:mt-6 px-2 sm:px-0 py-6">
+			<p className="text-center text-base sm:text-lg font-medium">
+				We specialize in creating cutting-edge <span className="font-bold">web applications</span>, <span className="font-bold">mobile apps</span>, and <span className="font-bold">custom software solutions</span>  
+				<br  className="hidden md:block"/> that drive business growth and innovation.
+        	 </p>
 
-					<div className="flex flex-wrap gap-4 pt-4">
-						<a
-							href="#"
-							className="inline-flex items-center justify-center px-8 py-3 text-white text-sm font-semibold bg-blue-600 hover:bg-blue-700 rounded-md shadow-md transition"
-						>
-							Start Your Project
-							<ArrowRight className="ml-2 h-5 w-5" />
-						</a>
-						<a
-							href="#"
-							className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 rounded-md shadow-sm transition"
-						>
-							<Play className="h-5 w-5 mr-2" /> Get Demo
-						</a>
-					</div>
+			<Link href="/#">
+				<button className="bg-[#0A0F2D] text-white px-6 py-2 my-6 rounded-md hover:bg-[#1C2541] transition-colors duration-300 text-sm sm:text-base">
+					Get Started
+				</button>
+	     	</Link>
 
-					{/* <div
-						className="pt-8 animate-fadeInUp"
-						style={{ animationDelay: "0.6s" }}
-					>
-						<p className="text-sm text-gray-500 mb-4">
-							Trusted by industry leaders
-						</p>
-						<div className="flex items-center flex-wrap gap-8 opacity-60">
-							{["TechCorp", "InnovateLab", "StartupXYZ"].map((brand, i) => (
-								<div
-									key={i}
-									className="text-2xl font-bold text-gray-400 tracking-wide"
-								>
-									{brand}
-								</div>
-							))}
-						</div>
-					</div> */}
-				</div>
+			 <Image
+				src="/Vector.svg"
+				alt="mouse"
+				width={30}
+				height={30}
+				className="md:mb-12 "
+			/>
+		</div>
 
-				<div className="relative ">
-					<div className="relative rounded-2xl overflow-hidden ">
-						<InvertedImage src="/hero.png" alt="Software development team" />
-						<div className="absolute top-4 right-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30  p-4 max-w-[200px]">
-							<div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-blue-400/20 to-purple-400/30 blur-xl -z-10"></div>
-							<div className="flex items-center space-x-2">
-								<span className="relative flex size-3">
-									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-									<span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
-								</span>
-								<span className="text-sm font-medium">99.9% Uptime</span>
-							</div>
-							<p className="text-xs text-gray-600 mt-1">
-								Reliable &amp; Scalable Solutions
-							</p>
-						</div>
-						<div className="absolute bottom-4 left-4 bg-white/30 backdrop-blur-2xl rounded-xl border border-white/30  p-4 max-w-[200px]">
-							<div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-blue-400/20 to-purple-400/30 blur-xl -z-10"></div>
-							<div className="flex items-center space-x-2">
-								<span className="relative flex size-3">
-									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
-									<span className="relative inline-flex size-3 rounded-full bg-blue-500"></span>
-								</span>
-								<span className="text-sm font-medium">Agile Development</span>
-							</div>
-							<p className="text-xs text-gray-600 mt-1">
-								Fast &amp; Efficient Delivery
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+	</div>
+	</>
+  );
 };
 
 export default Hero;

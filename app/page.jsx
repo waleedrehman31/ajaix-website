@@ -3,7 +3,7 @@ import ContactUs from "./components/sections/ContactUs";
 import Hero from "./components/sections/Hero";
 import Portfolio from "./components/sections/Portfolio";
 import Services from "./components/sections/Services";
-import Testimonials from "./components/sections/Testimonials";
+import Testimonials from "./components/sections/Testimonials"; 
 
 export default function Home() {
 	return (

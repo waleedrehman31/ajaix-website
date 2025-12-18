@@ -1,138 +1,166 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import SectionBadge from "../SectionBadge";
+
+import React from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+
+/* ===========================
+   TESTIMONIAL DATA
+=========================== */
 
 const testimonials = [
-	{
-		name: "Sarah Johnson",
-		role: "CEO, NovaTech",
-		image: "https://randomuser.me/api/portraits/women/65.jpg",
-		quote:
-			"Ajaix transformed our vision into a powerful, scalable product. Their design and development quality exceeded our expectations!",
-		rating: 5,
-	},
-	{
-		name: "David Kim",
-		role: "Founder, FlowAI",
-		image: "https://randomuser.me/api/portraits/men/44.jpg",
-		quote:
-			"Their team blended creativity with technical mastery — our AI platform now runs smoother and faster than ever!",
-		rating: 5,
-	},
-	{
-		name: "Emma Williams",
-		role: "Marketing Head, Bloomify",
-		image: "https://randomuser.me/api/portraits/women/47.jpg",
-		quote:
-			"We loved their collaborative approach. Every stage of development felt transparent and purpose-driven.",
-		rating: 4,
-	},
-	{
-		name: "Liam Patel",
-		role: "CTO, TradeLink",
-		image: "https://randomuser.me/api/portraits/men/61.jpg",
-		quote:
-			"Ajaix delivered our web platform with precision and performance. We scaled to thousands of users effortlessly.",
-		rating: 5,
-	},
+  {
+    text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
+    image: "https://randomuser.me/api/portraits/women/1.jpg",
+    name: "Briana Patton",
+    role: "Operations Manager",
+  },
+  {
+    text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    name: "Bilal Ahmed",
+    role: "IT Manager",
+  },
+  {
+    text: "The support team is exceptional, guiding us through setup and providing ongoing assistance.",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
+    name: "Saman Malik",
+    role: "Customer Support Lead",
+  },
+  {
+    text: "This ERP's seamless integration enhanced our business operations and efficiency.",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    name: "Omar Raza",
+    role: "CEO",
+  },
+  {
+    text: "Its robust features and quick support have transformed our workflow.",
+    image: "https://randomuser.me/api/portraits/women/5.jpg",
+    name: "Zainab Hussain",
+    role: "Project Manager",
+  },
+  {
+    text: "The smooth implementation exceeded expectations.",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    name: "Aliza Khan",
+    role: "Business Analyst",
+  },
+  {
+    text: "Our business functions improved with a user-friendly design.",
+    image: "https://randomuser.me/api/portraits/men/7.jpg",
+    name: "Farhan Siddiqui",
+    role: "Marketing Director",
+  },
+  {
+    text: "They delivered a solution that exceeded expectations.",
+    image: "https://randomuser.me/api/portraits/women/8.jpg",
+    name: "Sana Sheikh",
+    role: "Sales Manager",
+  },
+  {
+    text: "Our online presence and conversions significantly improved.",
+    image: "https://randomuser.me/api/portraits/men/9.jpg",
+    name: "Hassan Ali",
+    role: "E-commerce Manager",
+  },
 ];
 
+/* ===========================
+   COLUMN COMPONENT (INLINE)
+=========================== */
+
+const TestimonialsColumn = ({ testimonials, duration = 12, className = "" }) => {
+  return (
+    <div className={className}>
+      <motion.div
+        animate={{ translateY: "-50%" }}
+        transition={{
+          duration,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="flex flex-col gap-6 pb-6"
+      >
+        {[0, 1].map((loopIndex) => (
+          <React.Fragment key={loopIndex}>
+            {testimonials.map((item, index) => (
+              <div
+                key={`${item.name}-${index}`}
+                className="w-full max-w-xs rounded-3xl border bg-white p-6 shadow-lg"
+              >
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {item.text}
+                </p>
+
+                <div className="mt-5 flex items-center gap-3">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">
+                      {item.name}
+                    </p>
+                    <p className="text-xs text-gray-500">{item.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </React.Fragment>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+/* ===========================
+   MAIN TESTIMONIALS SECTION
+=========================== */
+
 const Testimonials = () => {
-	const [current, setCurrent] = useState(0);
+  const firstColumn = testimonials.slice(0, 3);
+  const secondColumn = testimonials.slice(3, 6);
+  const thirdColumn = testimonials.slice(6, 9);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrent((prev) => (prev + 1) % testimonials.length);
-		}, 6000);
-		return () => clearInterval(interval);
-	}, []);
+  return (
+    <section className="relative py-16">
+      <div className="mx-auto max-w-6xl px-6">
 
-	return (
-		<section id="testimonials" className="relative py-24 overflow-hidden">
-			<div className="absolute -inset-10 bg-gradient-to-tr from-blue-500/10 via-purple-500/10 to-transparent rounded-[4rem] blur-3xl -z-10"></div>
+        {/* Heading */}
+        <div className="mx-auto max-w-sm text-center space-y-4">
+          <span className="inline-block rr px-4 py-1 text-lg font-bold">
+            Testimonials
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight lg:text-4xl">
+            What our users say
+          </h2>
+          <p className="text-sm text-gray-600">
+            See what our customers have to say about us.
+          </p>
+        </div>
 
-			<div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-				{/* Heading */}
-				<div className="mb-16">
-					<SectionBadge content="💬 Testimonials" />
-					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-						What Our Clients Say
-					</h2>
-					<p className="text-lg text-gray-600 max-w-3xl mx-auto">
-						We build partnerships that last. Here’s what our clients say about
-						their experience working with{" "}
-						<span className="font-semibold text-blue-600">Ajaix</span>.
-					</p>
-				</div>
+        {/* Columns */}
+        <div className="mt-12 flex max-h-[740px] justify-center gap-6 overflow-hidden
+          [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
 
-				{/* Carousel */}
-				<div className="relative flex justify-center items-center overflow-hidden">
-					<div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent blur-3xl rounded-[4rem] -z-10"></div>
+          <TestimonialsColumn testimonials={firstColumn} duration={16} />
 
-					{testimonials.map((t, index) => (
-						<motion.div
-							key={index}
-							initial={{ opacity: 0, scale: 0.9, y: 30 }}
-							animate={{
-								opacity: current === index ? 1 : 0,
-								scale: current === index ? 1 : 0.95,
-								y: current === index ? 0 : 50,
-							}}
-							transition={{ duration: 0.6 }}
-							className={`absolute w-full max-w-3xl mx-auto ${
-								current === index
-									? "pointer-events-auto"
-									: "pointer-events-none"
-							}`}
-						>
-							<div className="relative bg-white/30 backdrop-blur-2xl border border-white/30 rounded-3xl p-10 shadow-lg text-center transition-all duration-500 hover:shadow-xl">
-								<div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-purple-400/10 to-transparent rounded-3xl -z-10"></div>
-								<div className="flex justify-center mb-6">
-									<img
-										src={t.image}
-										alt={t.name}
-										className="w-20 h-20 rounded-full border-4 border-white/40 shadow-lg"
-									/>
-								</div>
-								<p className="text-lg text-gray-800 italic mb-6 leading-relaxed">
-									“{t.quote}”
-								</p>
-								<div className="flex justify-center mb-2">
-									{Array.from({ length: t.rating }).map((_, i) => (
-										<Star
-											key={i}
-											className="w-5 h-5 text-yellow-400 fill-yellow-400"
-										/>
-									))}
-								</div>
-								<h4 className="text-lg font-semibold text-gray-900">
-									{t.name}
-								</h4>
-								<p className="text-sm text-gray-600">{t.role}</p>
-							</div>
-						</motion.div>
-					))}
-				</div>
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            duration={20}
+            className="hidden md:block"
+          />
 
-				{/* Dots Navigation */}
-				<div className="flex justify-center gap-3 mt-10">
-					{testimonials.map((_, i) => (
-						<button
-							key={i}
-							onClick={() => setCurrent(i)}
-							className={`w-3 h-3 rounded-full transition-all ${
-								current === i
-									? "bg-gradient-to-r from-blue-500 to-purple-600 scale-125 shadow-lg"
-									: "bg-gray-400/40 hover:bg-gray-500/60"
-							}`}
-						/>
-					))}
-				</div>
-			</div>
-		</section>
-	);
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            duration={18}
+            className="hidden lg:block"
+          />
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
 export default Testimonials;
